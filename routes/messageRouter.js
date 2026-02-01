@@ -1,15 +1,12 @@
 import { Router } from "express";
+import {
+	getMessageIndex,
+	getMessage,
+} from "../controllers/messageController.js";
 
 const messageRouter = Router();
 
-messageRouter.get("/", (req, res) => {
-	res.render("message", { messageId: null });
-});
-
-messageRouter.get("/:messageId", (req, res) => {
-	const { messageId } = req.params;
-
-	res.render("message", { messageId });
-});
+messageRouter.get("/", getMessageIndex);
+messageRouter.get("/:messageId", getMessage);
 
 export default messageRouter;

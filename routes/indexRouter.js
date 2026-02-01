@@ -1,13 +1,9 @@
 import { Router } from "express";
+import { getIndex, getNewMessageForm } from "../controllers/indexController.js";
 
 const indexRouter = Router();
 
-indexRouter.get("/", (req, res) => {
-	res.render("index");
-});
-
-indexRouter.get("/new", (req, res) => {
-	res.render("form");
-});
+indexRouter.get("/", getIndex);
+indexRouter.get("/new", getNewMessageForm);
 
 export default indexRouter;

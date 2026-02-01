@@ -1,7 +1,8 @@
 <h1>Message</h1>
 
-<% if (messageId) { %>
-  <p>Message ID: <%= messageId %></p>
+<% if (message) { %>
+  <p><strong>ID:</strong> <%= message.id %></p>
+  <p><strong>Text:</strong> <%= message.text %></p>
 <% } else { %>
   <p>No message selected</p>
 <% } %>
