@@ -3,12 +3,13 @@ import { Router } from "express";
 const messageRouter = Router();
 
 messageRouter.get("/", (req, res) => {
-	res.send("Address should have messageId specified");
+	res.render("message", { messageId: null });
 });
 
 messageRouter.get("/:messageId", (req, res) => {
 	const { messageId } = req.params;
-	res.send(`Message ID: ${messageId}`);
+
+	res.render("message", { messageId });
 });
 
 export default messageRouter;

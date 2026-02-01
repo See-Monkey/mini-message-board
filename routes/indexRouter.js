@@ -3,11 +3,11 @@ import { Router } from "express";
 const indexRouter = Router();
 
 indexRouter.get("/", (req, res) => {
-	res.send("Index page");
+	res.render("index");
 });
 
 indexRouter.get("/new", (req, res) => {
-	res.send("New message form");
+	res.render("form");
 });
 
 export default indexRouter;
