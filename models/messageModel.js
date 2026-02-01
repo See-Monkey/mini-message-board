@@ -17,4 +17,10 @@ const getMessageById = (id) => {
 	return messages.find((m) => m.id === Number(id));
 };
 
+const addMessage = (user, text) => {
+	const nextId = messages.length + 1;
+
+	messages.push({ id: nextId, text: text, user: user, added: new Date() });
+};
+
 export { getMessageById };
