@@ -13,6 +13,10 @@ const messages = [
 	},
 ];
 
+const getMessages = () => {
+	return messages;
+};
+
 const getMessageById = (id) => {
 	return messages.find((m) => m.id === Number(id));
 };
@@ -23,4 +27,4 @@ const addMessage = (user, text) => {
 	messages.push({ id: nextId, text: text, user: user, added: new Date() });
 };
 
-export { getMessageById };
+export { getMessages, getMessageById, addMessage };

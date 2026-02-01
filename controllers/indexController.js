@@ -1,5 +1,8 @@
+import { getMessages } from "../models/messageModel.js";
+
 const getIndex = (req, res) => {
-	res.render("index");
+	const messages = getMessages();
+	res.render("index", { messages });
 };
 
 const getNewMessageForm = (req, res) => {

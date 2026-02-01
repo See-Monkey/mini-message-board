@@ -1,3 +1,17 @@
 <h1>Home</h1>
 
+<h1>Messages</h1>
+
+<ul>
+  <% messages.forEach((message) => { %>
+    <li>
+      <a href="/message/<%= message.id %>">
+        <strong><%= message.user %></strong>:
+        <%= message.text %>
+        <%= message.added %>
+      </a>
+    </li>
+  <% }) %>
+</ul>
+
 <a href="/new">New Message</a>

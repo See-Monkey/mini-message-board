@@ -8,7 +8,7 @@ const getMessage = (req, res) => {
 
 const getMessageIndex = (req, res) => {
 	res.render("message", {
-		messageId: null,
+		message: null,
 	});
 };
 
