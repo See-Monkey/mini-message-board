@@ -1,5 +1,7 @@
 import { loadEnvFile } from "node:process";
-loadEnvFile();
+if (process.env.NODE_ENV !== "production") {
+	loadEnvFile();
+}
 
 import express from "express";
 import path from "node:path";
