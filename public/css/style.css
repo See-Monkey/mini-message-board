@@ -110,3 +110,14 @@ main ul {
 	flex-direction: column;
 	gap: 6px;
 }
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+form button {
+	margin-top: 24px;
+	align-self: center;
+}

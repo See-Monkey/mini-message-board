@@ -13,7 +13,7 @@
         <% if (message === null) { %>
           <p>Message not found</p>
         <% } else if (message) { %>
-          <p><%= message.user %></p>
+          <p><strong><%= message.user %></strong></p>
           <p><%= message.text %></p>
           <p><%= message.added %></p>
         <% } else { %>

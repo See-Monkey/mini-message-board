@@ -1,4 +1,4 @@
-import { getMessageById } from "../models/messageModel.js";
+import { getMessageById, addMessage } from "../models/messageModel.js";
 
 const getMessage = (req, res) => {
 	const message = getMessageById(req.params.messageId);
@@ -12,4 +12,17 @@ const getMessageIndex = (req, res) => {
 	});
 };
 
-export { getMessage, getMessageIndex };
+const postNewMessage = (req, res) => {
+	const { user, text } = req.body;
+
+	if (!user || !text) {
+		return res.status(400).send("Name and message are required");
+	}
+
+	addMessage(user, text);
+
+	// redirect back to index after successful POST
+	res.redirect("/");
+};
+
+export { getMessage, getMessageIndex, postNewMessage };
