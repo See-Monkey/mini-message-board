@@ -1,7 +1,7 @@
 import { getMessageById, addMessage } from "../models/messageModel.js";
 
-const getMessage = (req, res) => {
-	const message = getMessageById(req.params.messageId);
+const getMessage = async (req, res) => {
+	const message = await getMessageById(req.params.messageId);
 
 	res.render("message", { message });
 };

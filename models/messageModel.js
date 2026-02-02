@@ -13,15 +13,17 @@ const messages = [
 	},
 ];
 
-const getMessages = () => {
+import pool from "../db/pool.js";
+
+const getMessages = async () => {
 	return messages;
 };
 
-const getMessageById = (id) => {
+const getMessageById = async (id) => {
 	return messages.find((m) => m.id === Number(id));
 };
 
-const addMessage = (user, text) => {
+const addMessage = async (user, text) => {
 	const nextId = messages.length + 1;
 
 	messages.push({ id: nextId, text: text, user: user, added: new Date() });

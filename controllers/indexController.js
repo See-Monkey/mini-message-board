@@ -1,7 +1,7 @@
 import { getMessages } from "../models/messageModel.js";
 
-const getIndex = (req, res) => {
-	const messages = getMessages();
+const getIndex = async (req, res) => {
+	const messages = await getMessages();
 	res.render("index", { messages });
 };
 
