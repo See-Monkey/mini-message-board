@@ -1,17 +1,26 @@
-<h1>Home</h1>
+<head>
+  <meta charset="UTF-8" />
+  <title>Message Board</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
 
-<h1>Messages</h1>
+<%- include("header") %>
 
-<ul>
-  <% messages.forEach((message) => { %>
-    <li>
-      <a href="/message/<%= message.id %>">
-        <strong><%= message.user %></strong>:
-        <%= message.text %>
-        <%= message.added %>
-      </a>
-    </li>
-  <% }) %>
-</ul>
-
-<a href="/new">New Message</a>
+<main>
+    <div class="content">
+        <h1>Messages</h1>
+        
+        <ul>
+          <% messages.forEach((message) => { %>
+            <li>
+              <a href="/message/<%= message.id %>">
+                <strong><%= message.user %></strong>:
+                <%= message.text %>
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+        
+        <a href="/new"><p class="navLink">New Message</p></a>
+    </div>
+</main>
