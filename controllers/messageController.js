@@ -12,14 +12,14 @@ const getMessageIndex = (req, res) => {
 	});
 };
 
-const postNewMessage = (req, res) => {
+const postNewMessage = async (req, res) => {
 	const { user, text } = req.body;
 
 	if (!user || !text) {
 		return res.status(400).send("Name and message are required");
 	}
 
-	addMessage(user, text);
+	await addMessage(user, text);
 
 	// redirect back to index after successful POST
 	res.redirect("/");
